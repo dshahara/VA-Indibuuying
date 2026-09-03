@@ -22,6 +22,7 @@ const TEAM_MEMBERS = [
   ["deeksha", "Deeksha"],
 ];
 const IMAGE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".webp"];
+const CAL_URL = "https://cal.com/indibuy-enterprises-mqryrn/indibuyingva";
 
 const GENERATED_NOTE = [
   "<!--",
@@ -90,8 +91,8 @@ function buildHtml(html, teamPhotos) {
     .replaceAll("../../assets/logo-mark.png", "assets/logo-mark.png")
     .replace('href="home.html"', 'href="https://indibuying.com/"')
     .replaceAll('href="#pricing">Start the $99 trial', 'href="#call">Start the $99 trial')
-    .replaceAll('href="#pricing">Start the $99 trial', 'href="#call">Start the $99 trial')
-    .replaceAll('href="#call">Book a 20-minute call', 'href="#call">Book a 20-minute call')
+    .replaceAll('href="#call">Book a 20-minute call', `href="${CAL_URL}" target="_blank" rel="noopener">Book a 20-minute call`)
+    .replaceAll('href="#call">Book a call', `href="${CAL_URL}" target="_blank" rel="noopener">Book a call`)
     .replace(/<template id="__bundler_thumbnail">[\s\S]*?<\/template>\n?/, "");
 
   for (const [slug, name] of TEAM_MEMBERS) {
