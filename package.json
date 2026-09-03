@@ -1,0 +1,17 @@
+{
+  "name": "indibuying-static",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/generate-static.mjs",
+    "build:va": "node scripts/build-va-site.mjs",
+    "serve": "npx http-server dist -p 8888"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

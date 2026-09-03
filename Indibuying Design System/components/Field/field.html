@@ -1,0 +1,25 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Components / Field" subtitle="44px controls, 2px focus border" viewport="700x250" -->
+<html><head><meta charset="utf-8"><title>Field</title>
+<link rel="stylesheet" href="../../preview/_card.css"></head>
+<body><div class="card">
+<div class="eyebrow">Field</div>
+<div id="root"></div>
+<div class="note">Controls sit at 44px so they clear the touch floor at every breakpoint. Focus thickens the border instead of adding a ring.</div>
+</div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script>
+const { Field } = window.IndibuyingDesignSystem_92e6ff;
+const h = React.createElement;
+ReactDOM.createRoot(document.getElementById("root")).render(
+  h("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 } },
+    h(Field, { key: "a", name: "co", label: "Company", placeholder: "Acme Home Goods", help: "Optional" }),
+    h(Field, { key: "b", name: "cat", label: "Category", as: "select", options: ["Jewellery", "Handicrafts", "Furniture", "Home furnishings", "Apparel"] }),
+    h(Field, { key: "c", name: "qty", label: "Order quantity", defaultValue: "40", error: "Minimum order is 100 units" }),
+    h(Field, { key: "d", name: "spec", label: "Spec", as: "textarea", rows: 2, placeholder: "Material, finish, target price" })
+  )
+);
+</script>
+</body></html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Components / Navigation" subtitle="Sticky top nav with backdrop blur" viewport="700x140" -->
+<html><head><meta charset="utf-8"><title>Navigation</title>
+<link rel="stylesheet" href="_card.css"></head>
+<body><div class="card" style="padding:0;background:var(--paper-warm);">
+  <style>
+    .nav { display:flex; align-items:center; gap:24px; padding:14px 24px; background:rgba(255,255,255,.85); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+    .nav .brand { display:flex; align-items:center; gap:8px; font:900 italic 22px var(--font-display); letter-spacing:-.02em; color:var(--brand-green); }
+    .nav .brand img { height:26px; width:auto; }
+    .nav a { font:600 14px var(--font-sans); color:var(--fg-1); text-decoration:none; }
+    .nav a.muted { color:var(--fg-2); }
+    .nav a:hover { color:var(--brand-green-700); }
+    .nav-spacer { flex:1; }
+    .nav .cta { background:var(--brand-green); color:#fff; padding:8px 14px; border-radius:var(--r-md); font:700 13px var(--font-sans); }
+  </style>
+  <div class="nav">
+    <div class="brand"><img src="../assets/logo-mark.png" alt=""><span>Indibuying</span></div>
+    <a href="#">Services</a>
+    <a href="#" class="muted">Categories</a>
+    <a href="#" class="muted">How it works</a>
+    <a href="#" class="muted">Case studies</a>
+    <div class="nav-spacer"></div>
+    <a href="#" class="muted">Sign in</a>
+    <a href="#" class="cta">Get a quote</a>
+  </div>
+  <div style="padding:14px 24px;">
+    <div class="note">Sticky top nav · 70% paper bg + 12px backdrop blur on scroll · thin <code>--border</code> bottom line.</div>
+  </div>
+</div></body></html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Components / Pills & states" subtitle="Ink default, green reserved, pressed + disabled" viewport="700x230" -->
+<html><head><meta charset="utf-8"><title>Pills & states</title>
+<link rel="stylesheet" href="_card.css"></head>
+<body><div class="card">
+  <style>
+    .pill { font-family:var(--font-sans); font-weight:600; font-size:14px; line-height:1.3; border-radius:var(--r-pill); padding:12px 24px; min-height:44px; border:1px solid transparent; cursor:pointer; transition:all var(--dur-med) var(--ease-out); display:inline-flex; align-items:center; justify-content:center; gap:8px; }
+    .pill.ink { background:var(--action); color:var(--on-action); }
+    .pill.ink.pressed { background:var(--action-pressed); }
+    .pill.ink.focus { box-shadow:var(--ring-action); }
+    .pill.green { background:var(--brand-green); color:var(--fg-onbrand); }
+    .pill.green.pressed { background:var(--brand-green-700); }
+    .pill.outline { background:transparent; color:var(--fg-1); border-color:var(--border-strong); }
+    .pill.disabled { background:var(--action-disabled); color:var(--fg-mute); cursor:not-allowed; }
+    .pill.ondark { background:var(--paper); color:var(--action); }
+    .pill.sm { font-size:13px; padding:8px 16px; min-height:36px; }
+    .tab { font:500 14px var(--font-ui); border-radius:var(--r-pill); padding:8px 16px; border:1px solid var(--border); background:var(--paper); color:var(--fg-3); }
+    .tab.active { background:var(--action); color:var(--on-action); border-color:var(--action); }
+    .darkband { background:var(--ink-900); border-radius:var(--r-banner); padding:18px 22px; display:flex; align-items:center; gap:14px; }
+    .darkband span { color:var(--fg-ondark); font:700 15px var(--font-sans); margin-right:auto; }
+  </style>
+  <div class="eyebrow">Pills · states</div>
+  <div class="row wrap" style="gap:10px;">
+    <button class="pill ink">Get started</button>
+    <button class="pill ink pressed">Pressed</button>
+    <button class="pill ink focus">Focus</button>
+    <button class="pill green">Get a quote</button>
+    <button class="pill outline">Book a call</button>
+    <button class="pill disabled">Disabled</button>
+  </div>
+  <div class="row wrap" style="gap:10px;">
+    <button class="tab active">All work</button>
+    <button class="tab">Vendor search</button>
+    <button class="tab">Quality control</button>
+    <button class="tab">Logistics</button>
+    <button class="pill ink sm">Small · 36px</button>
+  </div>
+  <div class="darkband"><span>Ready to source?</span><button class="pill ondark">Get a quote</button></div>
+</div></body></html>

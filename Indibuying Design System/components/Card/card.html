@@ -1,0 +1,32 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Components / Card" subtitle="Flat 16px card and 28px pastel feature panel" viewport="700x340" -->
+<html><head><meta charset="utf-8"><title>Card</title>
+<link rel="stylesheet" href="../../preview/_card.css"></head>
+<body><div class="card">
+<div class="eyebrow">Card</div>
+<div id="root"></div>
+<div class="note">The system runs flat — elevation is reserved for mockups and modals. Pastel panels carry their weight through colour, not shadow.</div>
+</div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script>
+const { Card, Button } = window.IndibuyingDesignSystem_92e6ff;
+const h = React.createElement;
+ReactDOM.createRoot(document.getElementById("root")).render(
+  h("div", { style: { display: "flex", flexDirection: "column", gap: 14 } },
+    h("div", { key: "r1", style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 } },
+      h(Card, { key: "a", interactive: true, title: "Vendor search", action: h(Button, { size: "sm", variant: "secondary" }, "See scope") },
+        "We shortlist 3\u20135 vetted factories for your spec, with sample costs and lead times."),
+      h(Card, { key: "b", tint: "dark", title: "Operations support", action: h(Button, { size: "sm", variant: "onDark" }, "Get a quote") },
+        "A sourcing operator on your team, billed hourly.")
+    ),
+    h("div", { key: "r2", style: { display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14 } },
+      h(Card, { key: "c", tint: "jewellery", shape: "feature", title: "Jewellery" }, "Kundan, meenakari, silver."),
+      h(Card, { key: "d", tint: "furnishings", shape: "feature", title: "Furnishings" }, "Block print, quilts, rugs."),
+      h(Card, { key: "e", tint: "furniture", shape: "feature", title: "Furniture" }, "Mango wood, iron, cane.")
+    )
+  )
+);
+</script>
+</body></html>

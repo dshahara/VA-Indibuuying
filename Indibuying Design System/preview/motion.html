@@ -1,0 +1,32 @@
+<!doctype html>
+<!-- @dsCard group="Spacing" name="Spacing / Motion" subtitle="Three durations on a shared easing" viewport="700x200" -->
+<html><head><meta charset="utf-8"><title>Motion</title>
+<link rel="stylesheet" href="_card.css"></head>
+<body><div class="card">
+  <div class="eyebrow">Motion · duration &amp; easing</div>
+  <style>
+    .pulse { width:36px;height:36px;border-radius:50%;background:var(--brand-green);transform:translateX(0);animation:slide 2.4s var(--ease-out) infinite alternate; }
+    .pulse.med { animation-duration: 2.4s; }
+    .pulse.slow { animation-duration: 3.4s; }
+    @keyframes slide { from{transform:translateX(0)} to{transform:translateX(180px)} }
+    .track { position:relative;height:48px;background:var(--ink-50);border-radius:var(--r-pill);padding:6px;width:240px; }
+  </style>
+  <div style="display:flex;gap:22px;align-items:center;flex-wrap:wrap;">
+    <div>
+      <div class="track"><div class="pulse" style="animation-duration:.9s"></div></div>
+      <div class="name" style="margin-top:6px;">Fast · 120ms</div>
+      <div class="hex">--dur-fast</div>
+    </div>
+    <div>
+      <div class="track"><div class="pulse med" style="animation-duration:1.4s"></div></div>
+      <div class="name" style="margin-top:6px;">Medium · 200ms</div>
+      <div class="hex">--dur-med · default</div>
+    </div>
+    <div>
+      <div class="track"><div class="pulse slow" style="animation-duration:2.4s"></div></div>
+      <div class="name" style="margin-top:6px;">Slow · 340ms</div>
+      <div class="hex">--dur-slow</div>
+    </div>
+  </div>
+  <div class="note">Default easing: <code>cubic-bezier(.2,.7,.2,1)</code> — restrained, no bounce.</div>
+</div></body></html>

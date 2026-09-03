@@ -1,0 +1,786 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Indibuying — Inventory &amp; Procurement VA</title>
+
+<style>
+/* Inventory & Procurement VA landing page.
+   Built on the v2 system: ink pills, flat hairline cards,
+   pastel panels at 28px, italic reserved for hero + stat. */
+/* ============================================================
+   Indibuying Design System — Colors & Type
+   Brand: Indibuying.com — Product sourcing agency, India → Global
+
+   v2 — restructured against the Miro DESIGN.md reference:
+   ink-black pill CTAs with brand green reserved for the mark,
+   tags and success; pastel category tints; italic pulled back
+   to hero and stat display only.
+   ============================================================ */
+
+/* Fonts: Nunito (rounded humanist sans, matches the wordmark's
+   bold italic feel). Inter as system fallback for dense UI.
+   Substitution flag: original brand font is unknown — Nunito is
+   the closest Google Fonts match to the logo's wordmark.
+   Replace via fonts/ if a real brand font becomes available. */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  /* ── Brand ─────────────────────────────────────────────── */
+  --brand-green:        #1EAF12;   /* primary, from logo */
+  --brand-green-600:    #1A9C10;   /* hover */
+  --brand-green-700:    #15860D;   /* pressed */
+  --brand-green-500:    #2BC11E;   /* hot accent */
+  --brand-green-100:    #D7F4D3;   /* tint */
+  --brand-green-50:     #ECFBEA;   /* surface tint */
+
+  /* ── Action (primary CTAs are ink, not green) ──────────── */
+  --action:             #0E1410;   /* primary button */
+  --action-pressed:     #2A332D;   /* pressed */
+  --action-disabled:    #E2E7E4;   /* disabled fill */
+  --on-action:          #FFFFFF;
+
+  /* ── Neutrals (warm-cool ink, paper-leaning) ──────────── */
+  --ink-900:            #0E1410;   /* near-black, primary fg */
+  --ink-800:            #1A211C;
+  --ink-700:            #2A332D;
+  --ink-600:            #44504A;
+  --ink-500:            #6B7770;   /* body secondary */
+  --ink-400:            #95A09A;
+  --ink-300:            #C4CCC6;
+  --ink-200:            #E2E7E4;
+  --ink-100:            #EEF1EF;
+  --ink-50:             #F6F8F6;
+  --paper:              #FFFFFF;
+  --paper-warm:         #FBFBF7;   /* off-white for large surfaces */
+
+  /* ── Semantic ─────────────────────────────────────────── */
+  --success:            #1EAF12;   /* = brand */
+  --warning:            #E8A317;   /* amber, India-warm */
+  --danger:             #D8443C;
+  --info:               #1F7AD8;
+
+  /* ── Accent (used sparingly, India-warm) ──────────────── */
+  --accent-saffron:     #F2913B;
+  --accent-clay:        #B96A4B;
+  --accent-indigo:      #1F3A5F;   /* deep, for headers/cards */
+  --accent-moss:        #1C5A4C;
+  --accent-rose:        #A8484F;
+
+  /* ── Category tints (one per sourcing category) ────────── */
+  --cat-jewellery:      #FDEBD6;   /* saffron tint */
+  --cat-jewellery-ink:  #7A4410;
+  --cat-handicrafts:    #F5E3DB;   /* clay tint */
+  --cat-handicrafts-ink:#74392A;
+  --cat-furniture:      #E3E9F2;   /* indigo tint */
+  --cat-furniture-ink:  #1F3A5F;
+  --cat-furnishings:    #DCEFE9;   /* moss tint */
+  --cat-furnishings-ink:#1C5A4C;
+  --cat-apparel:        #F7E2E4;   /* rose tint */
+  --cat-apparel-ink:    #7A2F36;
+
+  /* ── Surfaces ─────────────────────────────────────────── */
+  --bg:                 var(--paper);
+  --bg-alt:             var(--paper-warm);
+  --bg-sunken:          var(--ink-50);
+  --surface:            var(--paper);
+  --surface-2:          var(--ink-50);
+  --border:             var(--ink-200);
+  --border-strong:      var(--ink-300);
+  --hairline-soft:      var(--ink-100);
+
+  /* ── Foreground ───────────────────────────────────────── */
+  --fg-1:               var(--ink-900);   /* primary text */
+  --fg-2:               var(--ink-600);   /* secondary text */
+  --fg-3:               var(--ink-500);   /* tertiary / meta */
+  --fg-mute:            var(--ink-400);
+  --fg-onbrand:         #FFFFFF;
+  --fg-ondark:          #FFFFFF;
+  --fg-ondark-mute:     rgba(255,255,255,.66);
+
+  /* ── Type families ────────────────────────────────────── */
+  --font-display:       "Nunito", ui-rounded, system-ui, sans-serif;
+  --font-sans:          "Nunito", "Inter", system-ui, -apple-system, sans-serif;
+  --font-ui:            "Inter", "Nunito", system-ui, sans-serif;
+  --font-mono:          ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* ── Type scale (rem on a 16px base) ──────────────────── */
+  --fs-11: 0.6875rem; /* @kind font */
+  --fs-12: 0.75rem; /* @kind font */
+  --fs-13: 0.8125rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-22: 1.375rem;
+  --fs-24: 1.5rem;
+  --fs-28: 1.75rem;
+  --fs-30: 1.875rem;
+  --fs-36: 2.25rem;
+  --fs-48: 3rem;
+  --fs-60: 3.75rem;
+  --fs-64: 4rem;
+  --fs-72: 4.5rem;
+  --fs-80: 5rem;
+
+  /* ── Weights ──────────────────────────────────────────── */
+  --fw-regular: 400; /* @kind font */
+  --fw-medium:  500; /* @kind font */
+  --fw-semi:    600; /* @kind font */
+  --fw-bold:    700; /* @kind font */
+  --fw-extra:   800; /* @kind font */
+  --fw-black:   900; /* @kind font */
+
+  /* ── Line heights ─────────────────────────────────────── */
+  --lh-hero:    1.02; /* @kind font */
+  --lh-tight:   1.05; /* @kind font */
+  --lh-snug:    1.2;  /* @kind font */
+  --lh-normal:  1.45; /* @kind font */
+  --lh-relaxed: 1.6;  /* @kind font */
+
+  /* ── Tracking ─────────────────────────────────────────── */
+  --tr-hero:    -0.03em;  /* @kind font */
+  --tr-tight:   -0.02em;  /* @kind font */
+  --tr-display: -0.025em; /* @kind font */
+  --tr-normal:  0;        /* @kind font */
+  --tr-loose:   0.04em;   /* @kind font */
+  --tr-eyebrow: 0.12em;   /* @kind font */
+
+  /* ── Spacing (4px base) ───────────────────────────────── */
+  --sp-0: 0; /* @kind spacing */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+  --sp-24: 96px;
+  --sp-30: 120px;
+
+  /* ── Radii ────────────────────────────────────────────── */
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-card: 16px;      /* standard card */
+  --r-xl: 20px;
+  --r-2xl: 28px;
+  --r-feature: 28px;   /* pastel category card */
+  --r-banner: 32px;    /* dark CTA banner */
+  --r-pill: 999px;     /* every button, tab and badge */
+
+  /* ── Elevation (low-alpha, paper-y) ───────────────────── */
+  --shadow-1: 0 1px 0 rgba(14,20,16,.04), 0 1px 2px rgba(14,20,16,.06);
+  --shadow-2: 0 1px 0 rgba(14,20,16,.04), 0 4px 12px rgba(14,20,16,.06);
+  --shadow-3: 0 2px 0 rgba(14,20,16,.04), 0 12px 28px rgba(14,20,16,.10);
+  --shadow-mockup: 0 12px 32px -4px rgba(14,20,16,.10);
+  --shadow-modal:  0 16px 48px -8px rgba(14,20,16,.14);
+  --shadow-brand: 0 8px 24px rgba(30,175,18,.22);
+  --ring-action: 0 0 0 3px rgba(14,20,16,.18);
+  --ring-brand:  0 0 0 3px rgba(30,175,18,.25);
+  --ring-focus:  0 0 0 3px rgba(31,122,216,.30);
+
+  /* ── Motion ───────────────────────────────────────────── */
+  --ease-out:    cubic-bezier(.2,.7,.2,1); /* @kind other */
+  --ease-in-out: cubic-bezier(.5,0,.3,1);  /* @kind other */
+  --dur-fast:    120ms; /* @kind other */
+  --dur-med:     200ms; /* @kind other */
+  --dur-slow:    340ms; /* @kind other */
+
+  /* ── Controls ─────────────────────────────────────────── */
+  --control-h:     44px;  /* @kind spacing */
+  --control-h-sm:  36px;  /* @kind spacing */
+
+  /* ── Layout ───────────────────────────────────────────── */
+  --container-sm:  640px;  /* @kind spacing */
+  --container-md:  860px;  /* @kind spacing */
+  --container-lg:  1120px; /* @kind spacing */
+  --container-xl:  1280px; /* @kind spacing */
+}
+
+/* ============================================================
+   Semantic type roles
+
+   Italic is a signature, not a default: it appears on the hero
+   display and stat display only. Everything below is upright.
+   ============================================================ */
+
+.h-display {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  font-style: italic;
+  font-size: clamp(2.75rem, 5.2vw + .5rem, var(--fs-80));
+  line-height: var(--lh-hero);
+  letter-spacing: var(--tr-hero);
+  color: var(--fg-1);
+}
+
+.h-stat {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  font-style: italic;
+  font-size: var(--fs-64);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-tight);
+  color: var(--fg-1);
+}
+
+.h1 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-extra);
+  font-size: clamp(2rem, 3vw + .6rem, var(--fs-48));
+  line-height: 1.08;
+  letter-spacing: var(--tr-display);
+  color: var(--fg-1);
+}
+
+.h2 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-36);
+  line-height: 1.15;
+  letter-spacing: var(--tr-tight);
+  color: var(--fg-1);
+}
+
+.h3 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-28);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.01em;
+  color: var(--fg-1);
+}
+
+.h4 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-22);
+  line-height: 1.3;
+  color: var(--fg-1);
+}
+
+.h5 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-18);
+  line-height: var(--lh-normal);
+  color: var(--fg-1);
+}
+
+.eyebrow {
+  font-family: var(--font-ui);
+  font-weight: var(--fw-semi);
+  font-size: var(--fs-11);
+  letter-spacing: var(--tr-eyebrow);
+  text-transform: uppercase;
+  color: var(--brand-green-700);
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-18);
+  line-height: 1.5;
+  color: var(--fg-2);
+}
+
+.p, p {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-16);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-2);
+}
+
+.p-lead {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-20);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-1);
+}
+
+.p-small {
+  font-family: var(--font-ui);
+  font-size: var(--fs-14);
+  line-height: var(--lh-normal);
+  color: var(--fg-2);
+}
+
+.meta {
+  font-family: var(--font-ui);
+  font-size: var(--fs-13);
+  color: var(--fg-3);
+  letter-spacing: 0.01em;
+}
+
+.code, code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--ink-50);
+  padding: 0.1em 0.35em;
+  border-radius: var(--r-xs);
+  color: var(--fg-1);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+
+html { color-scheme: light; }
+body {
+  font-family: var(--font-sans);
+  color: var(--fg-1);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a { color: var(--fg-1); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+a:hover { color: var(--brand-green-700); }
+
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--fg-1);font-family:var(--font-sans)}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer}
+a{color:inherit;text-decoration:none}
+a.tl{text-decoration:underline;text-underline-offset:4px;color:var(--brand-green-700)}
+a.tl:hover{color:var(--brand-green)}
+
+.wrap{max-width:var(--container-xl);margin:0 auto;padding:0 32px}
+.wrap.mid{max-width:var(--container-lg)}
+.wrap.narrow{max-width:var(--container-md)}
+.sec{padding:96px 0}
+.sec.tight{padding:64px 0}
+.sec.warm{background:var(--paper-warm)}
+.sec.hairtop{border-top:1px solid var(--border)}
+
+/* ── Type helpers ─────────────────────────────────── */
+.eyebrow{font-family:var(--font-ui);font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-green-700)}
+.hero-h{font-family:var(--font-display);font-weight:900;font-style:italic;font-size:clamp(2.5rem,4.4vw + .5rem,4.5rem);line-height:1.02;letter-spacing:-.03em;color:var(--fg-1)}
+.h2{font-family:var(--font-display);font-weight:700;font-size:clamp(1.75rem,2vw + .7rem,2.25rem);line-height:1.15;letter-spacing:-.02em;color:var(--fg-1)}
+.h3{font-family:var(--font-display);font-weight:700;font-size:22px;line-height:1.3;color:var(--fg-1)}
+.h4{font-family:var(--font-sans);font-weight:700;font-size:18px;line-height:1.4;color:var(--fg-1)}
+.sub{font-family:var(--font-sans);font-size:18px;line-height:1.5;color:var(--fg-2)}
+.body{font-family:var(--font-sans);font-size:16px;line-height:1.6;color:var(--fg-2)}
+.small{font-family:var(--font-ui);font-size:14px;line-height:1.5;color:var(--fg-3)}
+.tiny{font-family:var(--font-ui);font-size:13px;line-height:1.45;color:var(--fg-3)}
+strong{font-weight:700;color:var(--fg-1)}
+.stack{display:flex;flex-direction:column}
+.g8{gap:8px}.g10{gap:10px}.g12{gap:12px}.g14{gap:14px}.g16{gap:16px}.g20{gap:20px}.g24{gap:24px}.g32{gap:32px}
+.head{display:flex;flex-direction:column;gap:14px;max-width:760px}
+
+/* ── Pills ────────────────────────────────────────── */
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-sans);font-weight:600;font-size:15px;line-height:1.3;padding:13px 26px;min-height:48px;border-radius:var(--r-pill);border:1px solid transparent;background:var(--action);color:var(--on-action);transition:background var(--dur-med) var(--ease-out),box-shadow var(--dur-med) var(--ease-out);white-space:nowrap}
+.pill:active{background:var(--action-pressed)}
+.pill:focus-visible{outline:none;box-shadow:var(--ring-action)}
+.pill.green{background:var(--brand-green)}
+.pill.green:active{background:var(--brand-green-700)}
+.pill.green:focus-visible{box-shadow:var(--ring-brand)}
+.pill.outline{background:transparent;color:var(--fg-1);border-color:var(--border-strong)}
+.pill.outline:active{background:var(--ink-50)}
+.pill.ondark{background:var(--paper);color:var(--action)}
+.pill.ondark:active{background:var(--ink-100)}
+.pill.sm{font-size:14px;padding:10px 20px;min-height:40px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+
+/* ── Nav ──────────────────────────────────────────── */
+.nav{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:24px;padding:12px 32px;background:rgba(255,255,255,.85);backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid var(--border)}
+.nav .lockup{display:flex;align-items:center;gap:9px}
+.nav .lockup img{height:26px;width:auto}
+.nav .lockup span{font-family:var(--font-display);font-weight:900;font-style:italic;font-size:23px;letter-spacing:-.025em;color:var(--brand-green)}
+.nav .links{display:flex;gap:4px;margin-left:12px}
+.nav .links a{font-family:var(--font-ui);font-weight:500;font-size:14px;color:var(--fg-2);padding:8px 12px;border-radius:var(--r-pill)}
+.nav .links a:hover{color:var(--brand-green-700);background:var(--ink-50)}
+.nav .sp{flex:1}
+
+/* ── Hero ─────────────────────────────────────────── */
+.hero{padding:104px 0 88px}
+.hero .inner{display:grid;grid-template-columns:1.35fr .8fr;gap:64px;align-items:start}
+.hero .price-line{display:flex;flex-direction:column;gap:4px;padding:20px 0 4px}
+.hero .price-line .big{font-family:var(--font-sans);font-weight:700;font-size:20px;color:var(--fg-1)}
+.trust{margin-top:36px;padding-top:20px;border-top:1px solid var(--border);max-width:640px}
+.notpanel{background:var(--paper-warm);border:1px solid var(--hairline-soft);border-radius:var(--r-feature);padding:28px;display:flex;flex-direction:column;gap:12px}
+.notpanel .lbl{font-family:var(--font-ui);font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3)}
+
+/* ── Cards ────────────────────────────────────────── */
+.card{background:var(--surface);border:1px solid var(--hairline-soft);border-radius:var(--r-card);padding:24px;display:flex;flex-direction:column;gap:8px}
+.cardf{border-radius:var(--r-feature);padding:30px;display:flex;flex-direction:column;gap:10px;border:1px solid transparent}
+.cardf .h3{color:inherit}
+.cardf .txt{font-family:var(--font-sans);font-size:15px;line-height:1.55;color:inherit;opacity:.82}
+.t-jewellery{background:var(--cat-jewellery);color:var(--cat-jewellery-ink)}
+.t-handicrafts{background:var(--cat-handicrafts);color:var(--cat-handicrafts-ink)}
+.t-furniture{background:var(--cat-furniture);color:var(--cat-furniture-ink)}
+.t-furnishings{background:var(--cat-furnishings);color:var(--cat-furnishings-ink)}
+.t-apparel{background:var(--cat-apparel);color:var(--cat-apparel-ink)}
+.t-green{background:var(--brand-green-50);color:var(--brand-green-700)}
+.dark{background:var(--ink-900);color:var(--fg-ondark)}
+.dark .h2,.dark .h3,.dark .h4{color:var(--fg-ondark)}
+.dark .body,.dark .sub,.dark .small,.dark .tiny{color:var(--fg-ondark-mute)}
+.dark strong{color:var(--fg-ondark)}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.mt40{margin-top:40px}
+.mt32{margin-top:32px}
+
+/* ── Bullet lists ─────────────────────────────────── */
+.blist{display:flex;flex-direction:column;gap:12px;list-style:none}
+.blist li{display:grid;grid-template-columns:14px 1fr;gap:12px;align-items:start;font-family:var(--font-sans);font-size:16px;line-height:1.55;color:var(--fg-2)}
+.blist li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--brand-green);margin-top:8px}
+.blist.tight li{font-size:15px}
+.blist.ondark li{color:var(--fg-ondark-mute)}
+.blist.ondark li::before{background:var(--brand-green-500)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.chips li{font-family:var(--font-ui);font-weight:500;font-size:14px;padding:8px 14px;border-radius:var(--r-pill);background:var(--paper);border:1px solid var(--border);color:var(--fg-1)}
+
+/* ── Output pull ──────────────────────────────────── */
+.pull{border-radius:var(--r-feature);background:var(--ink-900);color:var(--fg-ondark);padding:32px;display:flex;flex-direction:column;gap:14px}
+.pull .neg{font-family:var(--font-sans);font-size:17px;line-height:1.5;color:var(--fg-ondark-mute)}
+.pull .pos{font-family:var(--font-display);font-weight:700;font-size:22px;line-height:1.4;letter-spacing:-.01em;color:var(--fg-ondark)}
+.pull .pos em{font-style:normal;color:var(--brand-green-500)}
+
+/* ── Pricing ──────────────────────────────────────── */
+.price{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-card);padding:28px;display:flex;flex-direction:column;gap:6px}
+.price .tier{font-family:var(--font-ui);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3)}
+.price .amt{font-family:var(--font-display);font-weight:800;font-size:40px;line-height:1.1;letter-spacing:-.025em;color:var(--fg-1)}
+.price .amt .per{font-size:16px;font-weight:600;letter-spacing:0;color:var(--fg-3)}
+.price .hrs{font-family:var(--font-ui);font-weight:500;font-size:15px;color:var(--fg-2)}
+.price.feat{background:var(--brand-green-50);border:2px solid var(--brand-green)}
+.price.inkcard{background:var(--ink-900);border-color:var(--ink-900)}
+.price.inkcard .tier{color:var(--brand-green-500)}
+.price.inkcard .amt{color:var(--fg-ondark)}
+.price.inkcard .hrs,.price.inkcard .tiny{color:var(--fg-ondark-mute)}
+
+/* ── Team ─────────────────────────────────────────── */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.person{background:var(--surface);border:1px solid var(--hairline-soft);border-radius:var(--r-card);padding:22px;display:flex;flex-direction:column;gap:12px}
+.person .mono{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-style:italic;font-size:20px;letter-spacing:-.02em}
+.person .nm{font-family:var(--font-display);font-weight:800;font-size:19px;letter-spacing:-.01em;color:var(--fg-1)}
+.person .bio{font-family:var(--font-sans);font-size:14.5px;line-height:1.55;color:var(--fg-2)}
+.person.lead{grid-column:span 3;flex-direction:row;gap:24px;align-items:flex-start;background:var(--paper-warm)}
+.person.lead .mono{width:64px;height:64px;font-size:24px;flex:0 0 auto}
+
+/* ── Quotes ───────────────────────────────────────── */
+.quote{background:var(--surface);border:1px solid var(--hairline-soft);border-radius:var(--r-feature);padding:28px;display:flex;flex-direction:column;gap:18px}
+.quote blockquote{font-family:var(--font-display);font-weight:700;font-size:19px;line-height:1.45;letter-spacing:-.01em;color:var(--fg-1)}
+.quote .who{display:flex;flex-direction:column;gap:2px;margin-top:auto}
+.quote .who .n{font-family:var(--font-ui);font-weight:600;font-size:14px;color:var(--fg-1)}
+.quote .who .s{font-family:var(--font-ui);font-size:13px;color:var(--fg-3)}
+
+/* ── FAQ ──────────────────────────────────────────── */
+.faq{display:flex;flex-direction:column;border-top:1px solid var(--border)}
+.faq details{border-bottom:1px solid var(--border)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 0;display:flex;align-items:center;gap:16px;font-family:var(--font-display);font-weight:700;font-size:18px;line-height:1.4;color:var(--fg-1)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";margin-left:auto;flex:0 0 auto;width:10px;height:10px;border-right:1.75px solid var(--fg-3);border-bottom:1.75px solid var(--fg-3);transform:rotate(45deg) translateY(-2px);transition:transform var(--dur-med) var(--ease-out)}
+.faq details[open] summary::after{transform:rotate(225deg) translateY(-2px)}
+.faq .ans{padding:0 0 24px;max-width:760px}
+
+/* ── Banner + footer ──────────────────────────────── */
+.banner{background:var(--ink-900);border-radius:var(--r-banner);padding:64px 56px;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.banner .h2{color:var(--fg-ondark);max-width:720px}
+.banner .sub{color:var(--fg-ondark-mute);max-width:660px}
+footer.site{background:var(--ink-900);color:var(--fg-ondark-mute);padding:56px 0 28px;margin-top:96px}
+footer.site .top{display:flex;justify-content:space-between;gap:40px;align-items:flex-start;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.1)}
+footer.site .lockup{display:flex;align-items:center;gap:10px}
+footer.site .lockup img{height:30px}
+footer.site .lockup span{font-family:var(--font-display);font-weight:900;font-style:italic;font-size:25px;letter-spacing:-.025em;color:var(--brand-green-500)}
+footer.site .blurb{font-family:var(--font-sans);font-size:14.5px;line-height:1.6;max-width:420px;margin-top:14px;color:var(--fg-ondark-mute)}
+footer.site .legal{margin-top:24px;display:flex;justify-content:space-between;gap:16px;font-family:var(--font-ui);font-size:13px;color:rgba(255,255,255,.5)}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width:1023px){
+  .hero .inner{grid-template-columns:1fr;gap:36px}
+  .grid3,.team{grid-template-columns:1fr 1fr}
+  .grid4{grid-template-columns:1fr 1fr}
+  .person.lead{grid-column:span 2}
+  .sec{padding:64px 0}
+  .hero{padding:64px 0 56px}
+  .nav .links{display:none}
+  .banner{padding:44px 32px}
+}
+@media (max-width:639px){
+  .wrap{padding:0 20px}
+  .sec{padding:48px 0}
+  .grid2,.grid3,.grid4,.team{grid-template-columns:1fr}
+  .person.lead{grid-column:span 1;flex-direction:column;gap:14px}
+  .banner{border-radius:var(--r-feature);padding:32px 24px}
+  footer.site .top{flex-direction:column}
+  footer.site .legal{flex-direction:column;gap:8px}
+}
+
+</style>
+</head>
+<body>
+
+<nav class="nav">
+<a class="lockup" href="home.html"><span>Indibuying</span></a>
+<div class="links"><a href="#work">The work</a><a href="#fit">Who it's for</a><a href="#trial">Trial</a><a href="#pricing">Pricing</a><a href="#team">Team</a><a href="#faq">FAQ</a></div>
+<div class="sp"></div>
+<a class="pill sm outline" href="#call">Book a call</a>
+<a class="pill sm" href="#trial">Start the $99 trial</a>
+</nav>
+
+<!-- ── Hero ──────────────────────────────────────── -->
+<section class="hero" data-screen-label="Hero">
+<div class="wrap"><div class="inner">
+<div class="stack g20">
+<div class="eyebrow">Inventory &amp; procurement operations</div>
+<h1 class="hero-h">Inventory &amp; Procurement VA for import-led product businesses</h1>
+<p class="sub">Recurring inventory, purchase order, ERP, receiving, billing, supplier follow-up, and inbound coordination work handled every week by a dedicated operations assistant.</p>
+<div class="price-line">
+<div class="big">Start with a $99 workflow trial</div>
+<div class="small">Then continue from <strong>$499/month</strong>.</div>
+</div>
+<div class="ctas">
+<a class="pill green" href="#trial">Start the $99 trial</a>
+<a class="pill outline" href="#call">Book a 20-minute call</a>
+</div>
+<div class="trust"><p class="small">Built by Indibuying for brands, wholesalers, distributors, hospitality operators, packaging buyers, and product businesses working with overseas suppliers.</p></div>
+</div>
+<div class="notpanel">
+<div class="lbl">To be clear</div>
+<p class="body">Not a general VA. Not inbox and calendar.</p>
+<p class="body">This is for physical-product businesses that need their procurement and inventory work done accurately, consistently, and with a clear output trail.</p>
+</div>
+</div></div>
+</section>
+
+<!-- ── The work ──────────────────────────────────── -->
+<section class="sec warm" id="work" data-screen-label="The work">
+<div class="wrap">
+<div class="head">
+<div class="eyebrow">The work, specifically</div>
+<h2 class="h2">Recurring inventory and procurement work that has to be right every week.</h2>
+</div>
+<div class="grid3 mt40">
+<div class="cardf t-green"><h3 class="h3">Inventory Reconciliation</h3><p class="txt">Daily or weekly stock counts checked against system inventory. Shortages, overages, stockouts, slow movers, and phantom stock flagged with quantity and value.</p></div>
+<div class="cardf t-jewellery"><h3 class="h3">Receiving and Billing Audits</h3><p class="txt">PO against receiver against packing list against vendor invoice. Customer order against shipment against invoice. This is where incorrect pricing, missing invoices, duplicate transactions, shortages, and overages usually get caught.</p></div>
+<div class="cardf t-furniture"><h3 class="h3">Purchase Orders</h3><p class="txt">PO creation from approved templates, replenishment quantities from sales velocity, open PO tracking, supplier lead time monitoring, and follow-up on late or partial orders.</p></div>
+<div class="cardf t-furnishings"><h3 class="h3">ERP Hygiene</h3><p class="txt">Keeping your system aligned with physical stock, open POs, receivers, shipments, invoices, and vendor records, so the numbers you use to make decisions are the real ones.</p></div>
+<div class="cardf t-handicrafts"><h3 class="h3">Supplier Follow-Up</h3><p class="txt">Sample status, QC documents, production updates, vendor records, and inbound material readiness. Hindi and regional language follow-up where that speeds things up.</p></div>
+<div class="cardf t-apparel"><h3 class="h3">Inbound and Freight Coordination</h3><p class="txt">Pickup status, shipment milestones, clearance documents, delivery timelines, and early escalation when a production or shipment date is going to slip.</p></div>
+</div>
+</div>
+</section>
+
+<!-- ── Who this is for ───────────────────────────── -->
+<section class="sec" id="fit" data-screen-label="Who this is for">
+<div class="wrap"><div class="grid2" style="gap:64px;align-items:start">
+<div class="stack g14">
+<div class="eyebrow">Who this is for</div>
+<h2 class="h2">Who This Is For</h2>
+<p class="body">For product businesses that import, distribute, assemble, or sell physical goods and need recurring operations support.</p>
+</div>
+<div class="stack g16">
+<div class="h4">Good fit for:</div>
+<ul class="blist">
+<li>Wholesale brands and distributors</li>
+<li>Ecommerce brands with inventory</li>
+<li>Hospitality groups buying linens, towels, bedding, amenities, or consumables</li>
+<li>Packaging-heavy brands buying boxes, cartons, labels, pouches, or inserts</li>
+<li>Home decor, furniture, furnishing, lifestyle, jewellery, gift, and handicraft importers</li>
+<li>Businesses buying from India, China, Southeast Asia, or other overseas suppliers</li>
+</ul>
+</div>
+</div></div>
+</section>
+
+<!-- ── Not a generic VA ──────────────────────────── -->
+<section class="sec warm" data-screen-label="Not a generic VA">
+<div class="wrap">
+<div class="head">
+<div class="eyebrow">Not a generic VA</div>
+<h2 class="h2">Not a Generic VA</h2>
+<p class="body">A generic VA can help with inbox, calendar, research, and admin.</p>
+<p class="body">An Indibuying Inventory &amp; Procurement VA is trained for the work behind physical products:</p>
+</div>
+<ul class="chips mt32">
+<li>Stock count checks</li><li>Inventory reconciliation</li><li>PO creation and tracking</li><li>Receiver and invoice matching</li><li>Customer billing checks</li><li>ERP updates</li><li>Reorder tracking</li><li>Supplier follow-up</li><li>Shipment milestone tracking</li><li>Discrepancy logs</li><li>Excel and Google Sheets work</li><li>ChatGPT and LLM use for summaries, SOPs, email drafts, data cleanup, and simple automations</li>
+</ul>
+<div class="pull mt40">
+<div class="neg">The output is not “I followed up.”</div>
+<div class="pos">The output is: <em>what was checked, what was wrong, what amount or quantity is affected, and what needs to happen next.</em></div>
+</div>
+</div>
+</section>
+
+<!-- ── Trial ─────────────────────────────────────── -->
+<section class="sec" id="trial" data-screen-label="Trial">
+<div class="wrap"><div class="grid2" style="gap:56px;align-items:start">
+<div class="stack g16">
+<div class="eyebrow">Start with one workflow</div>
+<h2 class="h2">$99 Inventory &amp; Procurement Trial</h2>
+<p class="body">Send us one repeatable workflow. We run it once, document the output, and show you exactly how we work before you commit monthly.</p>
+<p class="small"><strong>One workflow. Clear output. No long-term commitment.</strong></p>
+<div class="ctas" style="margin-top:8px"><a class="pill green" href="#pricing">Start the $99 trial</a><a class="pill outline" href="#call">Book a call</a></div>
+</div>
+<div class="cardf t-green" style="padding:32px">
+<div class="h4" style="color:inherit">Trial examples:</div>
+<ul class="blist tight" style="margin-top:6px">
+<li>Audit recent POs against vendor invoices and receivers</li>
+<li>Reconcile selected SKUs against system inventory</li>
+<li>Track open POs and late supplier updates</li>
+<li>Clean vendor or product records</li>
+<li>Review shortages, overages, slow movers, or phantom stock</li>
+<li>Build a simple weekly inventory or procurement tracker</li>
+</ul>
+</div>
+</div></div>
+</section>
+
+<!-- ── Pricing ───────────────────────────────────── -->
+<section class="sec warm" id="pricing" data-screen-label="Pricing">
+<div class="wrap">
+<div class="head">
+<div class="eyebrow">Pricing</div>
+<h2 class="h2">Inventory &amp; Procurement VA</h2>
+<p class="body">Start small. Continue monthly when it works.</p>
+</div>
+<div class="grid4 mt40">
+<div class="price inkcard">
+<div class="tier">One-Time Trial</div>
+<div class="amt">$99</div>
+<div class="hrs">One workflow, clear output, no long-term commitment.</div>
+</div>
+<div class="price feat">
+<div class="tier">Starter</div>
+<div class="amt">$499<span class="per">/month</span></div>
+<div class="hrs">40 hours/month</div>
+</div>
+<div class="price">
+<div class="tier">Part-Time</div>
+<div class="amt">$899<span class="per">/month</span></div>
+<div class="hrs">80 hours/month</div>
+</div>
+<div class="price">
+<div class="tier">Full-Time</div>
+<div class="amt">$1,599<span class="per">/month</span></div>
+<div class="hrs">160 hours/month</div>
+</div>
+</div>
+<p class="small mt32">Monthly plans include a dedicated assistant, Indibuying oversight, documented output, and replacement support if needed.</p>
+<div class="ctas mt32"><a class="pill green" href="#call">Start with $99 trial</a><a class="pill outline" href="#call">Book a call</a></div>
+</div>
+</section>
+
+<!-- ── Risk + vetting ────────────────────────────── -->
+<section class="sec" data-screen-label="How we reduce risk">
+<div class="wrap"><div class="grid2" style="gap:56px;align-items:start">
+<div class="stack g16">
+<div class="eyebrow">How we reduce risk</div>
+<h2 class="h2">You are not hiring a random freelancer.</h2>
+<p class="body">With Indibuying, you get a dedicated assistant backed by a small operations team that understands physical products, suppliers, documents, inventory systems, and weekly process work.</p>
+<div class="h4" style="margin-top:8px">What you get:</div>
+<ul class="blist">
+<li>Dedicated assistant for your recurring workflow</li>
+<li>Manager oversight during onboarding</li>
+<li>Output log for completed work</li>
+<li>Discrepancies flagged with quantity, value, document reference, and next action</li>
+<li>Handover notes maintained</li>
+<li>Replacement support if the assistant is unavailable or not the right fit</li>
+<li>Ability to grow from trial to starter, part-time, or full-time support</li>
+</ul>
+</div>
+<div class="card" style="padding:32px;border-radius:var(--r-feature);gap:16px">
+<div class="eyebrow">How assistants are checked</div>
+<div class="h3">Every assistant is evaluated for:</div>
+<ul class="blist tight">
+<li>Inventory and procurement understanding</li>
+<li>Excel and Google Sheets accuracy</li>
+<li>PO, invoice, receiver, and packing list checking</li>
+<li>ERP comfort across tools like Zoho, Shopify, ApparelMagic, Katana, Amazon, and similar systems</li>
+<li>Written English clarity</li>
+<li>SOP discipline</li>
+<li>Detail orientation</li>
+<li>Follow-up consistency</li>
+<li>Comfort using ChatGPT, LLMs, and simple automation tools</li>
+</ul>
+</div>
+</div></div>
+</section>
+
+<!-- ── Testimonials ──────────────────────────────── -->
+<section class="sec warm" data-screen-label="Testimonials">
+<div class="wrap">
+<div class="head"><div class="eyebrow">Testimonials</div><h2 class="h2">What clients say</h2></div>
+<div class="grid3 mt40">
+<div class="quote"><blockquote>“[Upwork testimonial about long-term operations, sourcing, or logistics support.]”</blockquote><div class="who"><span class="n">Client Name</span><span class="s">Upwork Client</span></div></div>
+<div class="quote"><blockquote>“[Upwork testimonial about accuracy, communication, and reliability.]”</blockquote><div class="who"><span class="n">Client Name</span><span class="s">Upwork Client</span></div></div>
+<div class="quote"><blockquote>“[Upwork testimonial about procurement, vendor follow-up, inventory, or execution quality.]”</blockquote><div class="who"><span class="n">Client Name</span><span class="s">Upwork Client</span></div></div>
+</div>
+</div>
+</section>
+
+<!-- ── Team ──────────────────────────────────────── -->
+<section class="sec" id="team" data-screen-label="Team">
+<div class="wrap">
+<div class="head">
+<div class="eyebrow">Meet the people behind the work</div>
+<h2 class="h2">Real people, not anonymous assistants.</h2>
+<p class="body">Your VA is supported by people who understand physical products, supplier follow-up, inventory records, purchase orders, import coordination, and repeatable operations work.</p>
+</div>
+<div class="team mt40">
+<div class="person lead">
+<div class="mono t-green">D</div>
+<div class="stack g8"><div class="nm">Deepanshu</div><p class="bio">14+ years in sourcing, procurement, vendor coordination, inventory operations, and international logistics. 5+ years delivering long-term operations work on Upwork. Experience working with suppliers, buyers, and shipments across India, China, the U.S., Europe, and the Middle East.</p></div>
+</div>
+<div class="person"><div class="mono t-jewellery">A</div><div class="nm">Amrish</div><p class="bio">Experience in procurement coordination, supplier follow-up, shipment tracking, documentation, and recurring operational workflows. Comfortable with spreadsheets, PO tracking, vendor communication, and SOP-based execution.</p></div>
+<div class="person"><div class="mono t-furniture">S</div><div class="nm">Shibu</div><p class="bio">Experience in inventory checks, ERP updates, data reconciliation, spreadsheet maintenance, and operational reporting. Comfortable working with stock counts, product records, and repeatable weekly processes.</p></div>
+<div class="person"><div class="mono t-handicrafts">G</div><div class="nm">Garima</div><p class="bio">Experience in documentation, invoice checks, record maintenance, reconciliation support, and process-driven back-office work.</p></div>
+<div class="person"><div class="mono t-apparel">A</div><div class="nm">Aditi</div><p class="bio">Experience in ecommerce operations, product data, SKU updates, inventory trackers, and spreadsheet-based coordination.</p></div>
+<div class="person"><div class="mono t-furnishings">A</div><div class="nm">Anjali</div><p class="bio">Experience in supplier follow-up, sample status tracking, QC document collection, vendor records, and daily operations coordination.</p></div>
+<div class="person"><div class="mono t-green">A</div><div class="nm">Anuj</div><p class="bio">Experience in data work, spreadsheets, reporting, ChatGPT/LLM workflows, and simple automation support.</p></div>
+<div class="person"><div class="mono t-jewellery">K</div><div class="nm">Kriti</div><p class="bio">Experience in documentation, SOPs, output review, discrepancy tracking, and process support.</p></div>
+<div class="person"><div class="mono t-furniture">D</div><div class="nm">Deeksha</div><p class="bio">Experience in coordination, reporting, task logs, follow-up summaries, and recurring operations support.</p></div>
+</div>
+</div>
+</section>
+
+<!-- ── FAQ ───────────────────────────────────────── -->
+<section class="sec warm" id="faq" data-screen-label="FAQ">
+<div class="wrap mid">
+<div class="head" style="margin-bottom:32px"><div class="eyebrow">FAQ</div><h2 class="h2">Questions buyers ask first</h2></div>
+<div class="faq">
+<details open><summary>Do I need SOPs ready?</summary><div class="ans"><p class="body">No. If you have SOPs, we follow them. If not, we start with your current process and help turn it into a simple repeatable workflow.</p></div></details>
+<details><summary>Which systems can you work with?</summary><div class="ans"><p class="body">We can work with inventory systems, ERPs, ecommerce platforms, spreadsheets, and shared folders. Common examples include Zoho Inventory, Shopify, Amazon, ApparelMagic, Katana, Excel, and Google Sheets.</p></div></details>
+<details><summary>Is the assistant dedicated?</summary><div class="ans"><p class="body">Yes. Monthly plans include a dedicated assistant assigned to your workflow.</p></div></details>
+<details><summary>What if the assistant is not a fit?</summary><div class="ans"><p class="body">Indibuying provides oversight and replacement support. We also maintain handover notes so the work does not depend on one person’s memory.</p></div></details>
+<details><summary>Can you work with suppliers outside India?</summary><div class="ans"><p class="body">Yes. The service is built for import-led businesses working with overseas suppliers, including India, China, Southeast Asia, and other regions.</p></div></details>
+<details><summary>How do I know the work is being done?</summary><div class="ans"><p class="body">You receive a clear output log. For discrepancies, we document what was checked, what was found, the quantity or value involved, and the suggested next action.</p></div></details>
+<details><summary>What happens after the $99 trial?</summary><div class="ans"><p class="body">If the workflow is a fit, you can continue with Starter, Part-Time, or Full-Time monthly support.</p></div></details>
+</div>
+</div>
+</section>
+
+<!-- ── Final CTA ─────────────────────────────────── -->
+<section class="sec tight" id="call" data-screen-label="Final CTA">
+<div class="wrap"><div class="banner">
+<h2 class="h2">Give us one inventory or procurement workflow.</h2>
+<p class="sub">We’ll run it once, document the output, and show you whether an Indibuying VA can take it off your plate every week.</p>
+<div class="ctas" style="margin-top:10px"><a class="pill ondark" href="#trial">Start the $99 trial</a><a class="pill" style="background:transparent;border-color:rgba(255,255,255,.35);color:#fff" href="#call">Book a 20-minute call</a></div>
+</div></div>
+</section>
+
+<footer class="site">
+<div class="wrap">
+<div class="top">
+<div>
+<div class="lockup"><span>Indibuying</span></div>
+<p class="blurb">Sourcing and operations support for import-led product businesses. Vendor search, quality control, logistics, and recurring inventory and procurement work.</p>
+</div>
+<div class="ctas"><a class="pill ondark" href="#trial">Start the $99 trial</a></div>
+</div>
+<div class="legal"><span>© Indibuying</span><span>Jaipur, India</span></div>
+</div>
+</footer>
+
+</body></html>

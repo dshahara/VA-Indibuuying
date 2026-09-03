@@ -1,0 +1,39 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Components / Button" subtitle="Ink pill default, green reserved — live component" viewport="700x260" -->
+<html><head><meta charset="utf-8"><title>Button</title>
+<link rel="stylesheet" href="../../preview/_card.css"></head>
+<body><div class="card">
+<div class="eyebrow">Button</div>
+<div id="root"></div>
+<div class="note">The pill is the signature — never soften it. Ink carries every CTA; green appears once per page at most.</div>
+</div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script>
+const { Button } = window.IndibuyingDesignSystem_92e6ff;
+const h = React.createElement;
+const row = { display: "flex", flexWrap: "wrap", gap: 10, alignItems: "center" };
+ReactDOM.createRoot(document.getElementById("root")).render(
+  h("div", { style: { display: "flex", flexDirection: "column", gap: 12 } },
+    h("div", { style: row },
+      h(Button, { key: "a" }, "Get started"),
+      h(Button, { key: "b", variant: "green" }, "Get a quote"),
+      h(Button, { key: "c", variant: "secondary" }, "Book a call"),
+      h(Button, { key: "d", variant: "ghost" }, "Pricing"),
+      h(Button, { key: "e", variant: "link" }, "See how it works")
+    ),
+    h("div", { style: row },
+      h(Button, { key: "f", size: "lg" }, "Large"),
+      h(Button, { key: "g" }, "Medium"),
+      h(Button, { key: "h", size: "sm" }, "Small"),
+      h(Button, { key: "i", disabled: true }, "Disabled")
+    ),
+    h("div", { style: { ...row, background: "var(--ink-900)", borderRadius: "var(--r-banner)", padding: "20px 24px" } },
+      h("span", { key: "t", style: { color: "var(--fg-ondark)", fontWeight: 700, fontSize: 15, marginRight: "auto" } }, "Ready to source?"),
+      h(Button, { key: "j", variant: "onDark" }, "Get a quote")
+    )
+  )
+);
+</script>
+</body></html>

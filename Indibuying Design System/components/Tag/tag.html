@@ -1,0 +1,36 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Components / Tag" subtitle="Status pills and the five category tones" viewport="700x180" -->
+<html><head><meta charset="utf-8"><title>Tag</title>
+<link rel="stylesheet" href="../../preview/_card.css"></head>
+<body><div class="card">
+<div class="eyebrow">Tag</div>
+<div id="root"></div>
+<div class="note">Category tones pair one-for-one with the Card tints, so a tag and its panel always agree.</div>
+</div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script>
+const { Tag } = window.IndibuyingDesignSystem_92e6ff;
+const h = React.createElement;
+ReactDOM.createRoot(document.getElementById("root")).render(
+  h("div", { style: { display: "flex", flexDirection: "column", gap: 10 } },
+    h("div", { key: "a", style: { display: "flex", flexWrap: "wrap", gap: 8 } },
+      h(Tag, { key: "1", tone: "success", dot: true }, "Shipped"),
+      h(Tag, { key: "2", tone: "green" }, "QC passed"),
+      h(Tag, { key: "3", tone: "neutral" }, "In production"),
+      h(Tag, { key: "4", tone: "warning" }, "Sample pending"),
+      h(Tag, { key: "5", tone: "danger" }, "Held at port"),
+      h(Tag, { key: "6", tone: "ink" }, "New")
+    ),
+    h("div", { key: "b", style: { display: "flex", flexWrap: "wrap", gap: 8 } },
+      h(Tag, { key: "7", tone: "jewellery" }, "Jewellery"),
+      h(Tag, { key: "8", tone: "handicrafts" }, "Handicrafts"),
+      h(Tag, { key: "9", tone: "furniture" }, "Furniture"),
+      h(Tag, { key: "10", tone: "furnishings" }, "Home furnishings"),
+      h(Tag, { key: "11", tone: "apparel" }, "Apparel")
+    )
+  )
+);
+</script>
+</body></html>

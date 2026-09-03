@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pricing — Indibuying</title>
+  <link rel="icon" href="../../assets/logo-mark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="pages.css" />
+  <style>
+    /* Force colors on in screen preview too */
+    html, body {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 14mm 12mm;
+    }
+
+    @media print {
+      html, body {
+        background: #fff !important;
+      }
+
+      /* Sticky nav doesn't make sense on print — convert to a header that
+         only shows once at the very top. */
+      .nav {
+        position: static !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: #fff !important;
+        border-bottom: 1px solid var(--border) !important;
+        padding: 0 0 14px !important;
+        margin-bottom: 0 !important;
+      }
+      .nav .nav-spacer + a,
+      .nav .btn.sm {
+        display: none !important; /* hide nav-only CTAs in print */
+      }
+
+      /* Each top-level section becomes a printed block — let the browser
+         break naturally between them, but never inside cards. */
+      .section,
+      .page-hero {
+        padding: 18px 0 !important;
+      }
+      .container {
+        padding: 0 !important;
+        max-width: none !important;
+      }
+
+      /* No hover lift; no animation. */
+      *, *::before, *::after {
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+        box-shadow: none !important;
+      }
+
+      /* Restore a tiny shadow on the units-total dark band so it stays
+         visually anchored. */
+      .units-total,
+      .case-stat,
+      .cta-band,
+      .pricing-ref,
+      .tour-trip {
+        box-shadow: none !important;
+      }
+
+      /* Page-break rules */
+      .units-table,
+      .unit,
+      .timeline,
+      .total-bar,
+      .faq,
+      .cta-band,
+      .quote-card,
+      .step,
+      .problem,
+      .step-row,
+      .offer-card,
+      .handle-card,
+      .engage-card,
+      .case-grid,
+      .fit-col,
+      .service-block,
+      .pricing-ref,
+      .who-item,
+      .compare {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      /* Major section starts */
+      .section + .section,
+      .page-hero + .section,
+      .section[id="cta"],
+      .section[id="typical"] {
+        break-before: page;
+        page-break-before: always;
+      }
+      /* The detailed unit-by-unit section gets its own page */
+      .unit + .unit {
+        break-before: page;
+        page-break-before: always;
+      }
+
+      /* Force all FAQ items expanded on print */
+      .faq[open] summary::after { content: "" !important; }
+      .faq summary::after { content: "" !important; }
+      .faq .a {
+        display: block !important;
+        margin-top: 8px !important;
+      }
+      .faq {
+        cursor: default !important;
+      }
+
+      /* Footer */
+      footer.site {
+        break-before: page;
+        page-break-before: always;
+        padding: 20px 0 !important;
+      }
+
+      /* Don't print the floating dark CTA band with rounded radial — make it flat */
+      .cta-band::after { display: none !important; }
+      .case-stat::after { display: none !important; }
+
+      /* Make sure radial gradients in the hero still print */
+      .page-hero {
+        background: var(--paper-warm) !important;
+      }
+
+      /* Buttons: keep brand fill */
+      .btn {
+        box-shadow: none !important;
+      }
+
+      /* Anchor underlines for in-print URL clarity — keep clean */
+      a { text-decoration: none; color: inherit; }
+    }
+  </style>
+</head>
+<body style="font-family: Raleway">
+  <div id="root" data-screen-label="Pricing V2"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="Footer.jsx"></script>
+  <script type="text/babel" src="PageShared.jsx"></script>
+  <script type="text/babel" src="PricingV2.jsx"></script>
+
+  <script type="text/babel">
+    ReactDOM.createRoot(document.getElementById('root')).render(<PricingV2Page/>);
+
+    // Auto-print once fonts + render settle.
+    (async () => {
+      // 1. Wait for fonts.
+      if (document.fonts && document.fonts.ready) {
+        try { await document.fonts.ready; } catch (e) {}
+      }
+      // 2. Wait for the React tree to be in the DOM.
+      const waitForRoot = () => new Promise(resolve => {
+        const check = () => {
+          if (document.querySelector('.units-table')) resolve();
+          else requestAnimationFrame(check);
+        };
+        check();
+      });
+      await waitForRoot();
+      // 3. Open all FAQ <details> so they're visible in print.
+      document.querySelectorAll('.faq').forEach(el => el.setAttribute('open', ''));
+      // 4. Give layout a beat to settle.
+      await new Promise(r => setTimeout(r, 600));
+      window.print();
+    })();
+  </script>
+</body>
+</html>

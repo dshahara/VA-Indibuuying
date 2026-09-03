@@ -1,0 +1,241 @@
+
+Indibuying
+Pricing V2 + Operations Support Page Copy
+Contingency pricing model &amp; Upwork-style hourly support | May 2026
+This document contains two pages: (1) /pricing-v2 — an unbundled, work-wise pricing model based on the Nazdiya proposal structure. Sits alongside existing /pricing; do not replace it. (2) /operations-support — Upwork-style hourly India operations support service. New service line. Both pages are paste-ready.
+Pricing V2 Page (/pricing-v2)
+Strategic note: This pricing model is fundamentally different from the bundled tier structure. Instead of three services with price ranges, this lists discrete work units with fixed prices. Lower friction, lower revenue per engagement, but easier to say yes to. Test against the original model and see which one converts better.
+[Page H1]
+Pricing
+How we price
+We price by the work, not by the package. Pick the parts of the sourcing process where you want our help, and pay only for those. No retainers, no commitments, no hidden markups.
+Workshop production costs are paid by you directly to the workshop at their quoted price. We don&apos;t take supplier commissions or add margins.
+
+The three work units
+Most clients use one, two, or all three of these. They&apos;re sequenced — most useful when used in order — but you can engage us for any single piece independently.
+[TABLE-START]
+
+[ROW]  |
+Work Unit |
+Price |
+Engagement
+[ROW]  |
+Vendor Search + Sampling Coordination |
+$250 |
+4-week engagement
+[ROW]  |
+Production Coordination + Pre-Shipment QC |
+$150 |
+Per order, one day in Jaipur. Outside Jaipur, travel cost extra.
+[ROW]  |
+Packaging, Logistics &amp; Documentation Support |
+$250 |
+Per shipment
+[TABLE-END]
+
+Full sourcing engagement using all three: $650. Most clients start with just vendor search and add the others as production progresses.
+
+1. Vendor Search + Sampling Coordination — $250
+4-week engagement.
+We identify and vet 2-3 Jaipur workshops matched to your design, category, and price point. Coordinate sample requests, translate your references in person with the karigar, and deliver a comparison report with pricing, MOQs, and lead times.
+What&apos;s included
+Shortlist of 2-3 vetted workshops
+Direct karigar-level conversation on your references
+Sample request coordination (workshop sample fees billed separately, paid by you to workshop)
+Capability + pricing report on each workshop
+Workshop introduction on approval
+What&apos;s not included
+Sample production cost (paid directly to workshop)
+International courier of physical samples to your address (billed at cost)
+Production order management (covered under Work Unit 2)
+Payment
+50% on engagement start, 50% on delivery of the capability report.
+
+2. Production Coordination + Pre-Shipment QC — $150
+Per order, one day in Jaipur.
+We coordinate with the workshop during production and conduct a physical pre-shipment inspection on dispatch day. Sample-vs-bulk comparison, count verification, defect check, photo report within 24 hours.
+What&apos;s included
+Production coordination during the active run (workshop communication, milestone tracking)
+One physical workshop visit in Jaipur on dispatch day
+Sample-vs-bulk comparison against your approved sample
+Defect check (category-specific — finish, stones, plating, stitching, etc.)
+Count verification against the order
+Photo report within 24 hours
+Go/no-go recommendation, with rework coordination if needed
+Outside Jaipur
+If your workshop is outside Jaipur (Jodhpur for furniture, Sanganer or Bagru for textiles, Mumbai for chains, Delhi for fashion casting), we still do the QC visit — actual travel and accommodation costs are billed separately at cost. Typically $80-$200 extra depending on destination.
+Payment
+Prepaid per order, before the QC visit.
+
+3. Packaging, Logistics &amp; Documentation Support — $250
+Per shipment.
+We handle the last-mile work after production is approved — coordinating packaging specs with the workshop, arranging international shipment, and managing export documentation so you receive a clean, customs-ready consignment.
+What&apos;s included
+Packaging coordination with the workshop (poly bags, boxes, labels per your spec)
+Courier or freight forwarder coordination (DHL, FedEx, sea freight as required)
+Export documentation support — commercial invoice, packing list, certificate of origin where applicable
+HS code guidance for your destination country
+Shipment tracking and delivery confirmation
+What&apos;s not included
+Actual shipping cost (paid directly to the courier or freight forwarder at quoted rate)
+Customs duty in your destination country (paid by you on arrival)
+Insurance (optional, billed at cost if you opt in)
+Payment
+Prepaid before shipment dispatch.
+
+How a typical engagement runs
+Most first-time buyers use all three work units in sequence over 8-12 weeks:
+Week 1-4: Vendor Search + Sampling Coordination ($250). We find the workshop, you approve the sample.
+Week 5-10: Production runs. You pay the workshop directly. We coordinate during production, then do the pre-shipment QC visit ($150) on dispatch day.
+Week 11-12: Packaging, Logistics &amp; Documentation Support ($250). We handle the shipment logistics. You receive your order.
+Total fees for the full engagement: $650, plus actual workshop production costs and shipping (paid by you directly).
+
+Common questions
+Can I use just one work unit?
+Yes. If you already have a workshop and just want pre-shipment QC, you can engage us only for Work Unit 2. If your workshop handles their own shipping but you need documentation help, you can engage us only for Work Unit 3. Pick what you need.
+Do you mark up workshop prices?
+No. You pay the workshop directly at their quoted price. Our fees come from you only.
+What if the QC finds defects?
+We coordinate rework with the workshop before dispatch. If a second QC visit is needed after rework, it&apos;s billed at $150 (or actuals if outside Jaipur). Most orders don&apos;t require a second visit.
+Do you do retainers for ongoing production?
+Yes — for brands running multiple production cycles per quarter, a monthly retainer often makes more sense than per-order pricing. Mention it on the fit call and we&apos;ll scope it based on your volume.
+Are there refunds if a vendor doesn&apos;t work out?
+On Work Unit 1 (Vendor Search), if we can&apos;t surface a workshop you&apos;d actually order from after the sample round, we refund the second half ($125). The first half covers our research time and is non-refundable.
+What categories do you cover at these prices?
+Jewellery is our deepest network. We also handle handicrafts, home furnishings, furniture, and handcrafted apparel where the workshop is in our network or accessible from Jaipur. For categories outside Jaipur, the QC unit may include travel costs.
+
+Get started
+A 20-minute fit call to scope which work units you need. We&apos;ll confirm pricing for your specific case (especially if your workshop is outside Jaipur) before any engagement starts.
+[CTA: Book a fit call]
+
+Operations Support Page (/operations-support)
+Strategic note: This is a separate service line, positioned as Upwork-style hourly India operations support. Different ICP than the sourcing services — targets brands and businesses that want a flexible Indian operations resource on-demand, not a packaged sourcing engagement. Powered by Shibu&apos;s profile (co-founder, Jaipur ops anchor).
+[Page H1]
+Operations Support — On-Demand India Team
+Hourly India operations support, when you need a hand on the ground
+Sometimes you don&apos;t need a full sourcing engagement. You need someone in India who can pick up the phone, visit a workshop, chase a quote, verify a vendor, or handle the operational tasks that keep getting pushed to the bottom of your list.
+That&apos;s what this service is for. Hourly, flexible, no minimum commitment.
+Who this is for
+Brands and businesses already sourcing from India who need overflow operational capacity
+Founders who don&apos;t want to hire a full-time India ops person yet
+Teams handling a specific one-off project (vendor verification, factory visit, supplier audit)
+US/EU companies needing a trusted person to walk into a factory and report back honestly
+Buyers who tried hiring a VA and realised they need someone who actually knows Indian manufacturing
+Buyers flying into India for factory visits who want someone on the ground to schedule meetings, translate, and make the trip count
+The rate
+$15-25 / hour. Exact rate within this band depends on the type of work and project scope. Quoted before each engagement.
+Time tracked transparently. Billed weekly or per project, depending on size. No retainer required.
+
+What we handle
+Anything that requires someone in India with manufacturing knowledge and on-ground access. A non-exhaustive list:
+Supplier research and verification
+Find and shortlist manufacturers in a specific Indian cluster (Jaipur, Jodhpur, Delhi-NCR, Mumbai-Pune, Kerala/Karnataka)
+Verify a manufacturer&apos;s legitimacy — physical address, GST registration, IEC, capability claims
+Distinguish real manufacturers from traders / middlemen with a website
+Collect quotes, MOQs, lead times across multiple suppliers
+Build comparison spreadsheets for your sourcing decisions
+Factory and workshop visits
+Physical factory visits in Jaipur and nearby clusters (Sanganer, Bagru, Jodhpur, Sikar)
+Take photos and short videos of production floor, machinery, sample work
+Conduct informal capability audits — capacity, quality standards, ethical practices
+Outside Jaipur: travel possible to Delhi-NCR, Mumbai, Jodhpur, Kerala coffee belt (actuals billed extra)
+Quality and inspection coordination
+Pre-shipment inspections (AQL-based or buyer-specified)
+Sample-vs-bulk comparisons
+Defect documentation with photo evidence
+Coordinate rework with the workshop before dispatch
+Note: we coordinate inspections, but don&apos;t hold formal third-party audit certifications (SGS, Bureau Veritas style). For those, we can recommend partners.
+Documentation and compliance support
+Export documentation — commercial invoice, packing list, certificate of origin, BIS hallmarking docs
+HS code guidance for your destination country
+Indian export compliance — FEMA, GST LUT, IEC, payment routing
+Coordination with freight forwarders, couriers, customs brokers
+Category-specific compliance (phytosanitary certificates for coffee, Coffee Board permits, BIS for silver, etc.)
+Vendor management and follow-up
+Chase pending samples, quotes, or production updates that your supplier has gone quiet on
+Negotiate pricing, MOQs, or payment terms in Hindi/regional languages
+Translate tech packs or specs for karigars who don&apos;t read English
+Mediate disputes between you and your Indian supplier
+Category-specific operational work
+Jewellery (Jaipur): silver verification, plating micron testing, stone authenticity checks, hallmarking coordination
+Furniture (Jodhpur/Jaipur): joinery quality, wood seasoning verification, export packaging standards
+Textiles (Sanganer/Bagru): block-print quality, color-fastness verification, fabric grade checks
+Apparel: stitch density, seam strength, sizing consistency
+Coffee (Kerala/Karnataka): cupping coordination, traceability verification, export permit coordination
+
+Buyer India Tour Support
+If you&apos;re flying in to India to meet factories and see production first-hand, we make the trip count. Most buyers come for 3-4 days and want to visit as many vetted suppliers as possible without wasting time on logistics, navigation, or factories that turn out not to fit. That&apos;s the whole job.
+We schedule the meetings, plan the routes, handle ground logistics, translate at factory visits, and travel with you through the trip. You land, we drive, you go home with decisions made.
+What&apos;s included
+Pre-trip factory shortlisting based on your sourcing brief and timeline
+Meeting scheduling with each factory — confirming availability, briefing them on what to prepare, sample sets to have ready
+Daily itinerary planning — typically 3-5 factory visits per day in dense clusters like Jaipur, 2-3 per day with travel time
+Personal accompaniment through every meeting — Shibu (or a verified local partner outside Jaipur) physically with you
+Translation at factory visits — Hindi, Marwari, regional languages as needed
+Real-time negotiation support — pricing, MOQs, payment terms in the room
+Post-meeting debrief notes — capability fit, red flags, our honest read on each supplier
+End-of-trip summary with shortlist and recommended next steps
+Logistics handled (billed at cost)
+Local logistics are coordinated by us and billed at actual cost — no markup. We arrange the practical bits so you don&apos;t lose half a day to traffic or a missed turn:
+Private car and driver for the duration of the trip
+Hotel bookings — we recommend properties that work for business travellers in each city
+Inter-city travel coordination — flights or trains between clusters (Delhi → Jaipur → Jodhpur, etc.)
+Restaurant recommendations and reservations where useful
+SIM card, local payment options, currency exchange guidance on arrival
+Geographic scope
+Anywhere in India where your factories are. Our deepest knowledge is in Jaipur and surrounding clusters (Sanganer, Bagru, Sikar). We also routinely handle trips to Delhi-NCR, Jodhpur, Mumbai, and the Kerala/Karnataka coffee belt. For other geographies, we either travel with you or coordinate with verified local partners on the ground.
+Pricing
+$15-25 / hour, same rate band as the rest of the operations support work. Tour days typically run 8-10 active hours, so a 3-day trip is usually in the 24-30 billable-hour range.
+Inter-city travel time during the trip (e.g., Shibu travelling Jaipur → Jodhpur with you) is billed at hourly. Personal travel time before and after the trip (e.g., getting to your arrival city) is not billed; only the actual cost of transport is.
+Local logistics — car, driver, hotels, inter-city flights/trains — are billed separately at actual cost with receipts. We share an estimate upfront based on your itinerary.
+How a typical 3-day trip is scoped
+Pre-trip planning call (1-2 hours, 2-3 weeks before arrival). We understand your sourcing brief, target categories, must-meets, and trip dates.
+Factory shortlisting and outreach (3-5 hours over the next week). We confirm 8-15 factory meetings depending on cluster density and trip length.
+Itinerary finalised (sent to you 5-7 days before arrival). Includes daily schedule, factory profiles, meeting prep notes, and logistics summary.
+On-the-ground days (3-4 days). Shibu accompanies you through every meeting. Daily debriefs over dinner or end-of-day.
+Post-trip summary (1-2 hours, within 5 days of trip end). Recommended shortlist, next steps, follow-up coordination if you want us to keep moving things forward.
+Most 3-day trips fall in the $500-$800 range for our hours + actuals on logistics ($300-$600 for car/driver and hotels depending on the city). We share a clear estimate before the trip starts.
+Who handles it
+Shibu personally for trips anchored in Jaipur or nearby clusters. For trips to Jodhpur, Delhi, Mumbai, or further south, Shibu either travels with you or hands off to a verified partner on the ground for that leg — always coordinated through us, never a third party you have to manage.
+
+How this differs from a virtual assistant
+A $10/hour VA in the Philippines or India does email coordination. We do on-ground operations. The difference matters when:
+You need someone to physically walk into a factory and look at production
+You need someone who speaks Hindi/Marwari/Kannada to negotiate with karigars and karkhana owners
+You need someone who knows whether a Jaipur quote is fair or a new-buyer premium
+You need someone who can spot the difference between real 925 silver and 800-grade with a fake stamp
+You need someone who can navigate Indian export compliance without learning it from scratch
+A VA can chase emails. We can chase outcomes.
+
+Engagement options
+Project-based
+Best for one-off work — a single factory visit, a supplier audit, a quote-collection project. We scope hours upfront, agree on deliverables, and bill at the end.
+Hourly bank
+Pre-purchase a block of hours (10, 25, 50) at a slightly reduced rate. Use them across multiple small tasks over 3-6 months. Best for buyers who need irregular but ongoing support.
+Embedded retainer
+Reserve a fixed number of hours per week (typically 10-20). Best for businesses that need consistent India ops support without hiring full-time.
+
+Who you&apos;ll work with
+This service is anchored by Shibu Gupta, co-founder of Indibuying and Jaipur operations lead. Shibu has been running Indibuying&apos;s on-ground operations across India&apos;s main manufacturing clusters — Jaipur, Jodhpur, Delhi-NCR, Mumbai-Pune, and the Kerala/Karnataka coffee belt — with direct karigar and factory access in each.
+For categories or geographies that need specialist knowledge (e.g., Kerala coffee, Jodhpur furniture), Shibu coordinates with verified partners on the ground who report into the same engagement.
+
+Common questions
+What&apos;s the minimum engagement?
+No formal minimum. Single-task engagements as small as 2-3 hours are fine. Most projects fall in the 5-20 hour range.
+Are travel costs included?
+Local travel within Jaipur city is included in the hourly rate. Outside-city travel (Jodhpur, Delhi, Mumbai, Kerala, etc.) is billed at actuals — train/flight + accommodation + ground transport. We share an estimate before any outside-city engagement.
+How do you bill time?
+Tracked in 15-minute increments with a brief work log per session. Shared with you weekly or at project completion. No padding, no minimum block billing.
+Can you sign an NDA?
+Yes — standard for buyer engagements. We sign before any work begins. Specific vendor names, designs, or sourcing strategies stay confidential.
+Do you offer this for non-sourcing operations work?
+If it&apos;s India operations work that benefits from a person on the ground — yes, in many cases. Examples: market research visits, partner due diligence, exhibition coverage, vendor onboarding for non-manufacturing services. Ask on the fit call.
+How much notice do you need for an India tour visit?
+Ideally 3-4 weeks. That gives us time to shortlist factories, confirm meetings, and plan logistics properly. We&apos;ve handled trips at 7-10 days&apos; notice when needed, but the factory line-up is tighter and some preferred suppliers may not have availability that quickly.
+How does this differ from your sourcing services?
+Sourcing services are packaged engagements with fixed deliverables (vendor search, QC, retainer). Operations support is hourly, flexible, and unbundled — you direct the work as needed. Many buyers use both, depending on the situation.
+
+Get started
+Tell us what you need help with. A 20-minute call to scope the work, agree on hours, and start.
+[CTA: Book a fit call]
+End of page copy
