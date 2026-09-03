@@ -68,6 +68,12 @@ strong{font-weight:700;color:var(--fg-1)}
 .notpanel{background:var(--paper-warm);border:1px solid var(--hairline-soft);border-radius:var(--r-feature);padding:28px;display:flex;flex-direction:column;gap:12px}
 .notpanel .lbl{font-family:var(--font-ui);font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3)}
 
+/* ── Client wall ──────────────────────────────────── */
+.logowall{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px 40px}
+.logowall .co{font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:-.01em;color:var(--fg-3);opacity:.7;transition:opacity var(--dur-med) var(--ease-out),color var(--dur-med) var(--ease-out)}
+.logowall .co:hover{opacity:1;color:var(--fg-1)}
+@media (max-width:639px){.logowall{gap:10px 22px}.logowall .co{font-size:16px}}
+
 /* ── Cards ────────────────────────────────────────── */
 .card{background:var(--surface);border:1px solid var(--hairline-soft);border-radius:var(--r-card);padding:24px;display:flex;flex-direction:column;gap:8px}
 .cardf{border-radius:var(--r-feature);padding:30px;display:flex;flex-direction:column;gap:10px;border:1px solid transparent}
